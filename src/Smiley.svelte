@@ -9,7 +9,7 @@
   }
 
   img {
-    width: 65px;
+    max-width: 65px;
     opacity: 50%;
   }
   img:hover {

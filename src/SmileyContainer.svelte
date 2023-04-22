@@ -61,7 +61,7 @@
 <style>
 
   .review-container {
-    width: 55%;
+    width: 80%;
     border: 1px solid gray;
     border-radius: 8px;
     min-height: 200px;
@@ -72,7 +72,8 @@
   .smiley-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1em;
   }
 
   .smileybtn {
@@ -87,13 +88,23 @@
     background-color: #0C83C3;
     color: whitesmoke;
     border: none;
+    margin-top: 24px;
   }
 
   .resetbtn:hover {
     background-color: #065681;
   }
 
+  h1, h2, h3{
+    margin: 0%;
+  }
   p {
     margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .review-container {
+      width: 100%;
+    }
   }
 </style>
