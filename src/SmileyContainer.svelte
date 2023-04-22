@@ -4,27 +4,27 @@
   let smileys = [
     {
       src: "./images/verygood.png",
-      smileyText: 'Very good',
+      smileyText: 'Très Bon',
       clicked: false
     },
     {
       src: "./images/good.png",
-      smileyText: 'Good',
+      smileyText: 'Bon',
       clicked: false
     },
     {
       src: "./images/okay.png",
-      smileyText: 'Okay',
+      smileyText: 'Neutre',
       clicked: false
     },
     {
       src: "./images/bad.png",
-      smileyText: 'Bad',
+      smileyText: 'Mauvais',
       clicked: false
     },
     {
       src: "./images/verybad.png",
-      smileyText: 'Very bad',
+      smileyText: 'Très Mauvais',
       clicked: false
     }
 
@@ -41,17 +41,17 @@
 
 <div class="review-container">
   {#if clicked}
-    <h3>Thank you so much for leaving your feedback!</h3>
-    <button on:click={smileyClicked} class="resetbtn">Change your mind?</button>
+  <h3>Merci d'avoir partagé votre opinion!</h3>
+    <button on:click={smileyClicked} class="resetbtn">Avez-vous changé d'avis?</button>
   {:else}
-  <h3>How was your experience?</h3>
+  <h3>Quel est votre niveau de satisfaction concernant decathlon.ch?</h3>
     <div class="smiley-container">
       {#each smileys as smiley }
       <div>
         <button on:click={smileyClicked} class="smileybtn">
           <Smiley src={smiley.src} smileyText={smiley.smileyText} />
         </button>
-        <p>{smiley.smileyText}</p>
+        <p class="smiley-text">{smiley.smileyText}</p>
       </div>
       {/each}
     </div>
@@ -62,18 +62,15 @@
 
   .review-container {
     width: 80%;
-    border: 1px solid gray;
-    border-radius: 8px;
-    min-height: 200px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 16px;
   }
 
   .smiley-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
   }
 
   .smileybtn {
@@ -95,7 +92,7 @@
     background-color: #065681;
   }
 
-  h1, h2, h3{
+  h3{
     margin: 0%;
   }
   p {
@@ -105,6 +102,9 @@
   @media (max-width: 600px) {
     .review-container {
       width: 100%;
+    }
+    .smiley-text {
+      display: none;
     }
   }
 </style>
