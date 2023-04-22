@@ -42,7 +42,7 @@
 <div class="review-container">
   {#if clicked}
     <h3>Thank you so much for leaving your feedback!</h3>
-    <button on:click={smileyClicked}>Change your mind</button>
+    <button on:click={smileyClicked} class="resetbtn">Change your mind?</button>
   {:else}
   <h3>How was your experience?</h3>
     <div class="smiley-container">
@@ -80,6 +80,17 @@
     border: none;
     border-radius: 50%;
     margin: 0;
+  }
+
+  .resetbtn {
+    border-radius: 8px;
+    background-color: #0C83C3;
+    color: whitesmoke;
+    border: none;
+  }
+
+  .resetbtn:hover {
+    background-color: #065681;
   }
 
   p {

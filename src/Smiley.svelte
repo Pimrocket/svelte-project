@@ -19,5 +19,5 @@
 
 
 <div>
-  <img src={src} alt={smileyText} on:click(getsClicked)/>
+  <img src={src} alt={smileyText}/>
 </div>
