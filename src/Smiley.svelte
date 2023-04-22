@@ -1,7 +1,4 @@
 <script>
-
-  // let isClicked = false;
-  // let smileyType = 'Happy';
   export let smileyType;
   export let smileyText;
   export let src;
