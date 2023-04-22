@@ -4,46 +4,58 @@
   let smileys = [
     {
       src: "./images/verygood.png",
-      smileyType: 'Very good smiley',
       smileyText: 'Very good',
       clicked: false
     },
     {
       src: "./images/good.png",
-      smileyType: 'Good smiley',
       smileyText: 'Good',
       clicked: false
     },
     {
       src: "./images/okay.png",
-      smileyType: 'Okay smiley',
       smileyText: 'Okay',
       clicked: false
     },
     {
       src: "./images/bad.png",
-      smileyType: 'Bad smiley',
       smileyText: 'Bad',
       clicked: false
     },
     {
       src: "./images/verybad.png",
-      smileyType: 'Very bad smiley',
       smileyText: 'Very bad',
       clicked: false
     }
+
   ];
+
+  let clicked = false;
+
+  let smileyClicked = () => {
+    clicked = !clicked
+  }
 
 </script>
 
 
 <div class="review-container">
+  {#if clicked}
+    <h3>Thank you so much for leaving your feedback!</h3>
+    <button on:click={smileyClicked}>Change your mind</button>
+  {:else}
   <h3>How was your experience?</h3>
     <div class="smiley-container">
-    {#each smileys as smiley }
-      <Smiley src={smiley.src} alt={smiley.smileyType} smileyText={smiley.smileyText}/>
-    {/each}
-  </div>
+      {#each smileys as smiley }
+      <div>
+        <button on:click={smileyClicked} class="smileybtn">
+          <Smiley src={smiley.src} smileyText={smiley.smileyText} />
+        </button>
+        <p>{smiley.smileyText}</p>
+      </div>
+      {/each}
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -61,5 +73,16 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .smileybtn {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
   }
 </style>

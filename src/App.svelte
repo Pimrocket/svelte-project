@@ -1,17 +1,16 @@
 <script>
   import Navbar from './Navbar.svelte';
-  import Smiley from './Smiley.svelte';
-    import SmileyContainer from './SmileyContainer.svelte';
-	export let name;
+  import SmileyContainer from './SmileyContainer.svelte';
+	// export let name;
 
-    let smileys = [
-    {
-      src: "./images/verygood.png",
-      smileyType: 'Happy',
-      smileyText: 'Happy',
-      clicked: false
-    }
-  ];
+    // let smileys = [
+    // {
+    //   src: "./images/verygood.png",
+    //   smileyType: 'Happy',
+    //   smileyText: 'Happy',
+    //   clicked: false
+    // }
+  // ];
 </script>
 
 <Navbar />
@@ -20,8 +19,6 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 <SmileyContainer />
-
-
 
 <style>
   :global(body) {

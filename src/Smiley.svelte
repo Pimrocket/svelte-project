@@ -1,8 +1,6 @@
 <script>
-  export let smileyType;
-  export let smileyText;
   export let src;
-  // export let clicked;
+  export let smileyText;
 </script>
 
 <style>
@@ -17,14 +15,9 @@
   img:hover {
     opacity: 100%;
   }
-
-  p {
-    margin: 0;
-  }
 </style>
 
 
 <div>
-  <img {src} alt={smileyType} />
-  <p><strong>{smileyText}</strong></p>
+  <img src={src} alt={smileyText} on:click(getsClicked)/>
 </div>
